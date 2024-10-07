@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle del Empleado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalle del Empleado</h1>
+        <p><strong>ID:</strong> <span th:text="${empleado.codEmpleado}"></span></p>
+        <p><strong>Nombre:</strong> <span th:text="${empleado.nombre}"></span></p>
+        <p><strong>Apellido:</strong> <span th:text="${empleado.apellido}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${empleado.email}"></span></p>
+        <p><strong>Fecha de Nacimiento:</strong> <span th:text="${empleado.fechaNac}"></span></p>
+        <p><strong>Dirección:</strong> <span th:text="${empleado.direccion}"></span></p>
+        <p><strong>Tipo de Empleado:</strong> <span th:text="${empleado.tipoEmp}"></span></p>
+        <p><strong>Departamento:</strong> <span th:text="${empleado.departamento.nombreDepartamento}"></span></p>
+        <a href="/emp" class="btn btn-secondary">Volver</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro Nueva Incidencia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <br/>
+
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+	            <h1 class="text-center">Registro de Incidencia</h1>
+	            <div class="card-body">
+	                <form th:action="@{/guardarInc}" th:object="${incidencia}" method="post">
+	                    <div class="form-group">
+	                        <label>Descripción: </label>
+	                        <input type="text" name="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Ingrese la descripción de la incidencia" required>
+	                    </div>
+	                    <div class="form-group">
+	                        <label>Nivel de Prioridad: </label>
+	                        <select name="nivelPrioridad" th:field="*{nivelPrioridad}" class="form-control" required>
+	                            <option value="" disabled selected>Seleccione el nivel de prioridad</option>
+	                            <option value="BAJA">Baja</option>
+	                            <option value="MEDIA">Media</option>
+	                            <option value="ALTA">Alta</option>
+	                        </select>
+	                    </div>
+						<div class="form-group">
+						    <label>Categoria: </label>
+						    <select name="categoria" th:field="*{categoria}" class="form-control" required>
+						        <option value="" disabled selected>Seleccione la Categoria</option>
+						        <option value="Tecnologica">Tecnologica</option>
+						        <option value="No Tecnologica">No Tecnologica</option>
+						        <option value="Alerta Externa">Alerta Externa</option>
+						    </select>
+						</div>
+						<input type="hidden" name="estado" th:field="*{estado}" value="No Procesada">
+						<div class="form-group">
+						    <label>Código de Empleado: </label>
+						    <input type="number" name="codEmpleado" th:field="*{empleado.codEmpleado}" min="0" class="form-control" required>
+						</div>
+						<div class="form-group d-flex justify-content-between">
+						    <button type="submit" class="btn btn-primary">Guardar</button>
+							<a href="/inc" class="btn btn-warning">Cancelar</a>
+						</div>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro de Atención</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<br/>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+	            <h1 class="text-center">Registro de Atención</h1>
+	            <div class="card-body">
+	                <form th:action="@{/guardarAte}" th:object="${atencion}" method="post">
+	                    <div class="form-group">
+	                        <label>Acciones: </label>
+	                        <input type="text" name="acciones" th:field="*{acciones}" class="form-control" placeholder="Ingrese acciones" required>
+	                    </div>
+	                    <div class="form-group">
+	                        <label>Presupuesto: </label>
+	                        <input type="number" step="0.01" name="presupuesto" th:field="*{presupuesto}" min="0" class="form-control" placeholder="Ingrese presupuesto" required>
+	                    </div>
+	                    <div class="form-group">
+	                        <label>Detalle de Presupuesto: </label>
+	                        <input type="text" name="detallePresupuesto" th:field="*{detallePresupuesto}" class="form-control" placeholder="Ingrese detalle de presupuesto" required>
+	                    </div>
+	                    <div class="form-group">
+	                        <label>Observaciones: </label>
+	                        <textarea name="observaciones" th:field="*{observaciones}" class="form-control" placeholder="Ingrese observaciones" required></textarea>
+	                    </div>
+	                    <div class="form-group">
+	                        <label>Empleado: </label>
+							<select name="empleado" th:field="*{empleado}" class="form-control" required>
+							    <option th:each="empleado : ${empleadosTecnicos}" 
+							            th:value="${empleado.codEmpleado}" 
+							            th:text="${empleado.nombre + ' ' + empleado.apellido}"></option>
+							</select>
+						</div>
+	                    <div class="form-group">
+							<label for="incidencia">Selecciona una incidencia:</label>
+							<select th:field="*{incidencia}" class="form-control">
+							    <option th:each="incidencia : ${incidencias}" th:value="${incidencia.codIncidencia}" th:text="${incidencia.descripcion}"></option>
+							</select>
+						</div>
+						<div class="form-group d-flex justify-content-between">
+						    <button type="submit" class="btn btn-primary">Guardar</button>
+							<a href="/ate" class="btn btn-warning">Cancelar</a>
+						</div>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>

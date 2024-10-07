@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle de la Incidencia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalle de la Incidencia</h1>
+        <p><strong>ID:</strong> <span th:text="${incidencia.codIncidencia}"></span></p>
+        <p><strong>Descripción:</strong> <span th:text="${incidencia.descripcion}"></span></p>
+        <p><strong>Estado:</strong> <span th:text="${incidencia.estado}"></span></p>
+        <p><strong>Fecha de Registro:</strong> <span th:text="${incidencia.fechaRegistro}"></span></p>
+        <p><strong>Empleado:</strong> <span th:text="${incidencia.empleado.nombre + ' ' + incidencia.empleado.apellido}"></span></p>
+        <p><strong>Categoria:</strong> <span th:text="${incidencia.categoria}"></span></p>
+		<p><strong>Nivel de Prioridad:</strong> <span th:text="${incidencia.nivelPrioridad}"></span></p>
+        <a href="/inc" class="btn btn-secondary">Volver</a>
+    </div>
+</body>
+</html>

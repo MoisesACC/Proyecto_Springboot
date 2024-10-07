@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Incidencias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            position: relative;
+		}
+		header, footer {
+            background: #0044cc;
+            color: white;
+            text-align: center;
+     		padding: 1em 0;
+		}
+		h2 {
+		    color: #0044cc;
+		}
+		.container {
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    padding: 1em;
+		    background: white;
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		    position: relative;
+		    z-index: 2;
+		}
+		.content {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		}
+		address {
+		    font-style: normal;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg" style="background-color: black;">
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/">Gestion SMV<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/inc">Mantenimiento Incidencias</a>
+	      </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="/ate">Atenciones</a>
+		  </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/emp">Control Empleado</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	
+	<div class="container">
+		<header>
+		    <h1>SUPERINTENDECIA DE MERCADO DE VALORES</h1>
+		</header>
+		
+	            <section class="content">
+	                <h2>Bienvenidos</h2>
+	                <br>
+	                <br>
+	                <p>
+	                    La Superintendencia de Mercado de Valores (SMV) es el organismo regulador encargado de supervisar y regular el mercado de valores en nuestro país. Nuestra misión es garantizar la transparencia, integridad y eficiencia del mercado de valores, protegiendo los intereses de los inversionistas y fomentando el desarrollo económico sostenible.
+	                </p>
+	                <p>
+	                    La SMV trabaja para asegurar que las entidades participantes del mercado de valores cumplan con las leyes y regulaciones establecidas, promoviendo un ambiente seguro y confiable para la inversión. Además, estamos comprometidos con la educación financiera y la divulgación de información relevante para los inversionistas y el público en general.
+	                </p>
+	            </section>
+	            
+	            <section>
+	                <h2>Nuestros Objetivos</h2>
+	                <ul>
+	                    <li>Supervisar y regular las actividades del mercado de valores.</li>
+	                    <li>Proteger los intereses de los inversionistas.</li>
+	                    <li>Promover la transparencia y eficiencia del mercado.</li>
+	                    <li>Fomentar el desarrollo económico sostenible.</li>
+	                </ul>
+	            </section>
+	            
+	            <section>
+	                <h2>Contáctanos</h2>
+	                <p>
+	                    Si tienes alguna consulta o necesitas más información, no dudes en ponerte en contacto con nosotros.
+	                </p>
+	                <address>
+	                    <strong>Superintendencia de Mercado de Valores</strong><br>
+	                    Dirección: Calle Cibertec, Edificio SMV, Lima, Perú<br>
+	                    Teléfono: (123) 456-7890<br>
+	                    Correo Electrónico: <a href="mailto:info@smv.gov">info@smv.gov</a>
+	                </address>
+	            </section>
+	        </div>
+</body>
+</html>

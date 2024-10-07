@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Incidencias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		/* Estilos para los estados */
+		.circulo {
+		    display: inline-block;
+		    width: 10px;
+		    height: 10px;
+		    border-radius: 50%;
+		    margin-right: 5px;
+		}
+
+		.verde {
+		    background-color: #4CAF50; /* Verde */
+		}
+
+		.rojo {
+		    background-color: rgb(255, 0, 0); /* Amarillo */
+		}
+	</style>	
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg" style="background-color: black;">
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Gestion SMV<span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="/inc">Mantenimiento Incidencias</a>
+		      </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="/ate">Atenciones</a>
+			  </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="/emp">Control Empleado</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+    
+    <div class="container mt-4">
+		<div class="form-group mx-sm-3 mb-2">
+			<a th:href="@{/nuevoInc}" class="btn btn-success mb-3">Agregar Incidencia</a>
+		</div>
+		<form class="form-inline" th:action="@{/inc}">
+			<div class="form-group mb-2">
+				<label>Filtrar: </label>
+			</div>
+			<div class="form-group mx-sm-3 mb-2">
+				<input type="text" name="palabraClave" class="form-control" id="palabraClave" th:value="${palabraClave}" placeholder="Descripción o Nivel de prioridad" required style="width: 300px;">
+			</div>
+			<input type="submit" class="btn btn-primary mb-2" value="Buscar">
+			&nbsp;&nbsp;
+			<input type="button" class="btn btn-secondary mb-2" value="Limpiar" onclick="limpiarCampos()">
+		</form>
+        
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Incidencia</th>
+                    <th scope="col">Nivel Prioridad</th>
+                    <th scope="col">Categoría</th>
+					<th scope="col">Estado</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="incidencia : ${listaIncidencia}">
+                    <td th:text="${incidencia.codIncidencia}"></td>
+                    <td th:text="${incidencia.descripcion}"></td>
+                    <td th:text="${incidencia.nivelPrioridad}"></td>
+					<td th:text="${incidencia.categoria}"></td>
+					<td>
+					    <span th:if="${incidencia.estado == 'Procesada'}" class="circulo verde"></span>
+					    <span th:if="${incidencia.estado == 'No Procesada'}" class="circulo rojo"></span>
+					</td>
+					<td>
+						<a th:href="@{/incidencia/detalle/{id}(id=${incidencia.codIncidencia})}" class="btn btn-info">Detalle</a>
+                        <a class="btn btn-primary" th:href="@{'/editarInc/' + ${incidencia.codIncidencia}}">Editar</a>
+					</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<script type="text/javascript">
+		function limpiarCampos(){
+			window.location='/inc';
+		}
+	</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9og8cvZ8LGuwaxhBmEoRRr6SRGOWtIveC35d" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFwA5Bw8FWpi1MquV34S5HG8Q" crossorigin="anonymous"></script>
+</body>
+</html>
