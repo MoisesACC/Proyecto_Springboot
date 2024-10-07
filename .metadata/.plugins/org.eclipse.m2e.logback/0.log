@@ -30,3 +30,11 @@
 2024-07-07 02:46:04,127 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-07-07 02:46:04,137 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\eduar\OneDrive\Escritorio\gestion-incidencias (1)\gestion-incidencias\src\test\resources
 2024-07-07 03:15:43,785 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-10-06 21:20:06,567 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2024-10-06 21:20:52,624 [Worker-4: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.cibertec:gestion-incidencias:0.0.1-SNAPSHOT @ C:\Users\PC\Downloads\gestion-incidencias\gestion-incidencias\pom.xml.
+2024-10-06 21:20:54,733 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-06 21:20:54,794 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-10-06 21:20:54,809 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\PC\Downloads\gestion-incidencias\gestion-incidencias\src\test\resources
+2024-10-06 21:20:57,394 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-06 21:20:57,403 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-10-06 21:20:57,461 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\PC\Downloads\gestion-incidencias\gestion-incidencias\src\test\resources
